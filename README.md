@@ -1,44 +1,40 @@
-# Front End Developer Dynamic Skills Test V2
+# Patient Data Dashboard 🩺
 
-## 🧠 Test Overview
+**A high-fidelity healthcare analytics platform built for the Coalition Technologies Front-End Developer Challenge.**
 
-This assessment is designed to evaluate your technical, problem-solving, and communication skills as a Front-End Developer. The test consists of **three parts**:
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://ct-patient-data-dashboard.vercel.app)
+[![Tech Stack](https://img.shields.io/badge/Stack-React%20%2B%20Vite%20%2B%20Tailwind-blue)](https://github.com/salonyranjan/ct-patient-data-dashboard)
 
-### 1. 📝 Questionnaire
-
-* **Duration:** 15 minutes
-* **Format:** Multiple-choice or short-answer questions
-* **Purpose:** Evaluate your theoretical knowledge of front-end technologies, frameworks, and best practices.
-
-### 2. 🎥 Video Interview
-
-* **Duration:** 15 minutes
-* **Requirements:** Webcam and microphone
-* **Purpose:** Assess your communication skills, thought process, and ability to articulate solutions clearly.
-
-### 3. 💻 Development Challenge
-
-* **Duration:** 180 minutes (3 hours)
-* **Format:** Hands-on coding task
-* **Purpose:** Demonstrate your ability to implement real-world front-end solutions, including responsive design, code quality, and functionality.
+## 🚀 Live Application
+View the production build here: **[ct-patient-data-dashboard.vercel.app](https://ct-patient-data-dashboard.vercel.app)**
 
 ---
 
-# 🩺 Tech.Care Patient Dashboard
+## 📖 Project Overview
+This project is a pixel-perfect conversion of a professional Adobe XD healthcare template. It integrates the Coalition Technologies Patient Data API to provide real-time monitoring of patient vitals, diagnosis history, and lab results.
 
-A fully responsive and data-driven **Patient Dashboard** built using **React**, **Vite**, and **Tailwind CSS**. This dashboard fetches real patient data from the **Coalition Technologies API** and presents it in a clean, professional healthcare interface with charts, vital signs, and diagnosis details.
+### ✨ Key Features
+- **Dynamic Data Filtering:** Optimized to display comprehensive records for **Jessica Taylor**.
+- **Interactive Vitals Charting:** Custom-styled **Chart.js** implementation showing Systolic and Diastolic trends with 6-month historical data.
+- **Fluid UI/UX:** Enhanced with **Framer Motion** for smooth sidebar transitions and component entries.
+- **Responsive Architecture:** A 3-column flexible grid layout that maintains integrity across desktop, tablet, and mobile breakpoints.
+- **Modern Styling:** Built with **Tailwind CSS** using custom configuration to match exact Adobe XD hex codes and spacing.
 
 ---
 
-## ✨ Features
+## 🏗️ Project Architecture & Workflow
 
-- **Dynamic Patient Switching:** Instantly update dashboard details when selecting a new patient from the sidebar.  
-- **Secure API Integration:** Fetches live data using Basic Authentication from the Coalition API.  
-- **Interactive Charts:** Displays blood pressure trends using **Chart.js** via `react-chartjs-2`.  
-- **Smooth Animations:** Powered by **Framer Motion** for sidebar and card transitions.  
-- **Professional UI Design:** Clean, modern healthcare interface inspired by high-fidelity mockups.  
-- **Fully Responsive:** Seamlessly adapts to any screen size with flexible grid layouts.  
-
+### Component Hierarchy
+```mermaid
+graph TD
+    A[App.tsx] --> B[TopNav]
+    A --> C[PatientSidebar]
+    A --> D[MainDashboard]
+    A --> E[PatientDetailCard]
+    D --> F[PatientChart]
+    D --> G[DiagnosisList]
+    E --> H[LabResults]
+```
 ---
 
 ## 🛠️ Tech Stack
@@ -53,35 +49,56 @@ A fully responsive and data-driven **Patient Dashboard** built using **React**, 
 | Icons | Lucide React |
 
 ---
+## 🔄 Data Flow Diagram
+graph LR
+    subgraph Client_Browser [Client Browser]
+        A[App Component]
+        B[State Management]
+        C[UI Components]
+    end
 
-## 🚀 Getting Started
+    subgraph API_Layer [API Layer]
+        D{Fetch API}
+        E[Basic Auth Header]
+    end
 
-### 1️⃣ Prerequisites
-Ensure you have **Node.js** and **npm** (or yarn/pnpm) installed.
+    subgraph Data_Source [External Server]
+        F[(Coalition API)]
+    end
 
-### 3️⃣ Environment Variables
+    %% Flow Steps
+    A -->|1. Initialization| B
+    B -->|2. Trigger Fetch| D
+    D -->|3. Add Credentials| E
+    E -->|4. Request| F
+    F -->|5. Full Patient Array| D
+    D -->|6. Filter: Jessica Taylor| B
+    B -->|7. Distribute Props| C
+    C -->|8. Render Graph/Vitals| A
 
-Create a `.env` file in the project root with the following:
+---
+## ⚙️ Local Setup
+Clone & Install:
 
+```PowerShell
+git clone [https://github.com/salonyranjan/ct-patient-data-dashboard.git](https://github.com/salonyranjan/ct-patient-data-dashboard.git)
+cd ct-patient-data-dashboard
+npm install --legacy-peer-deps
+```
+Environment Configuration:
+Create a .env file in the root directory:
 ```bash
-VITE_API_URL=https://fedskillstest.coalitiontechnologies.workers.dev
+Code snippet
+VITE_API_URL=[https://fedskillstest.coalitiontechnologies.workers.dev](https://fedskillstest.coalitiontechnologies.workers.dev)
 VITE_API_USERNAME="coalition"
 VITE_API_PASSWORD="skills-test"
 ```
+Development Mode:
 
-> ⚠️ Use the correct credentials provided for your environment.
-
-### 4️⃣ Run the Application
-
-```bash
+```PowerShell
 npm run dev
 ```
-
-Then open:
-👉 **[http://localhost:5173](http://localhost:5173)**
-
 ---
-
 ## 📁 Folder Structure
 
 | Path                                   | Description                                                  |
@@ -95,16 +112,5 @@ Then open:
 | `tailwind.config.js`                   | Tailwind custom theme configuration.                         |
 
 ---
-
-## 🧠 Design Highlights
-
-* **Chart Aesthetics:** Custom colors and rounded edges for Systolic/Diastolic lines.
-* **Vitals Cards:** Light backgrounds and semantic color cues.
-* **Diagnosis Table:** Scrollable structure with sticky headers for usability.
-* **Consistent Animations:** Spring-based transitions across components.
-* 
----
-
-
 
 
