@@ -1,0 +1,29 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "theme": {
+    "extend": {
+      "colors": {
+        "systolic-pink": "#E66F7F",
+        "diastolic-purple": "#986BFF"
+      },
+      "fontFamily": {
+        "sans": [
+          "Manrope",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "Noto Sans",
+          "sans-serif"
+        ]
+      }
+    }
+  }
+}
