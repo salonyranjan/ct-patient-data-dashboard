@@ -50,6 +50,7 @@ graph TD
 
 ---
 ## 🔄 Data Flow Diagram
+```mermaid
 graph LR
     subgraph Client_Browser [Client Browser]
         A[App Component]
@@ -75,6 +76,7 @@ graph LR
     D -->|6. Filter: Jessica Taylor| B
     B -->|7. Distribute Props| C
     C -->|8. Render Graph/Vitals| A
+```
 
 ---
 ## ⚙️ Local Setup
